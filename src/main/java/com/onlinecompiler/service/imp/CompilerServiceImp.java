@@ -13,20 +13,22 @@ public class CompilerServiceImp implements CompilerService {
 	private static final String path = System.getProperty("user.home") + "/Documents/";
 	private static final String virtualMachine = "virtual_machine";
 	private static final String timeoutSecond = "20";
-
+	private int randomName;
+	
 	@Autowired
 	private CommandExecutionService commandExecutionService;
+	
 
 	public void createTemporaryFolder() {
-		String command = prepareCommand();
+		String command = getPreparedCommand();
 		commandExecutionService.executeCommand(command);
 		System.out.println(command);
 	}
 
-	private String prepareCommand() {
-		int randomName = getRandomNumberForFolderName();
-		return String.format("%s && %s && %s", getTempCreationCommand(randomName), getCopyPayloadCommand(randomName),
-				getSettingTempPermissionCommand(randomName));
+	private String getPreparedCommand() {
+		randomName = getRandomNumberForFolderName();
+		return String.format("%s && %s && %s", getTempCreationCommand(), getCopyPayloadCommand(),
+				getSettingTempPermissionCommand());
 	}
 
 	private int getRandomNumberForFolderName() {
@@ -34,15 +36,15 @@ public class CompilerServiceImp implements CompilerService {
 		return 100000 + rnd.nextInt(900000);
 	}
 
-	private String getTempCreationCommand(int randomName) {
+	private String getTempCreationCommand() {
 		return String.format("mkdir %s%s%s", path, folder, randomName);
 	}
 
-	private String getCopyPayloadCommand(int randomName) {
+	private String getCopyPayloadCommand() {
 		return String.format("cp %sPayload/* %s%s%s", path, path, folder, randomName);
 	}
 
-	private String getSettingTempPermissionCommand(int randomName) {
+	private String getSettingTempPermissionCommand() {
 		return String.format("chmod 777 %s%s%s", path, folder, randomName);
 	}
 
