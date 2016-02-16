@@ -11,18 +11,23 @@ public class CompilerOrder {
 	private Map<String, Language> compilerMap;
 	
 	public Language getLanguageInstance(String language){
-		if(isCompilerMapNull())
-			compilerMap = new HashMap<>();
-		addExistLanguages();
+		prepareInstance();
 		return compilerMap.get(language);
 	}
 
-	private void addExistLanguages() {
-		compilerMap.put("python", new Python());
-		compilerMap.put("php", new Php());
+	private void prepareInstance() {
+		if(isCompilerMapNull())
+			compilerMap = new HashMap<>();
+		addExistLanguages();
 	}
 
 	private boolean isCompilerMapNull() {
 		return compilerMap == null;
 	}
+	
+	private void addExistLanguages() {
+		compilerMap.put("python", new Python());
+		compilerMap.put("php", new Php());
+	}
+
 }
