@@ -4,6 +4,12 @@ public class ExecutedCodeResult {
 	private String output;
 	private String error;
 	
+	public ExecutedCodeResult(String output, String error) {
+		super();
+		this.output = output;
+		this.error = error;
+	}
+
 	public String getOutput() {
 		return output;
 	}
