@@ -1,9 +1,11 @@
 # Online Compiler
 Online compiler developing by using Java technologies.
+The project is quite simple and easy Rest API. It only takes three parameters such as language name,code and input value. After that, It executes given code and returns output and error(if exist) as JSON data.
 
 Docker
 -----------------------------
 The project uses compilebox project's Docker setting which is available from https://github.com/remoteinterview/compilebox
+On the other hand, It is clear Java equivalent of that project.
 
 Docker Installation
 -----------------------------
