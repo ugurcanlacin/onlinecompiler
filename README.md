@@ -23,13 +23,13 @@ You need  to edit /etc/sudoers file:
 sudo gedit /etc/sudoers
 
 and add that lines to this file:
-
+```
 # for user
 YOUR_USER_NAME ALL= NOPASSWD: ALL
 
 # for group
 YOUR_GROUP_NAME ALL= NOPASSWD: ALL
-
+```
 After that there will no any error about that.
     
 
