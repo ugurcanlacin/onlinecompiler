@@ -16,7 +16,7 @@ Docker Installation
     
     - Once the Install script executes successfully, copy the folder named 'API' to your desired path and change your path value in com.onlinecompiler.service.DockerParameterConstants according to your desired path.You can also decide how long the execution process should take by setting timeoutSecond field.
 
-NOTE: The project can occur error when it tries to execute command because of permission. To run shell commands in terminal, follow these steps on below.
+NOTE: The project can occur error when it tries to execute command because of permission. To run shell commands in Java, follow these steps on below.
 
 You need  to edit /etc/sudoers file:
 
