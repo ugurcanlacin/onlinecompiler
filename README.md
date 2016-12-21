@@ -1,5 +1,5 @@
 # Online Compiler
-Online compiler developing by using Java technologies.
+Online compiler developed by using Java technologies.
 The project is quite simple and easy Rest API. It only takes three parameters such as language name,code and input value. After that, It executes given code and returns output and error(if exist) as JSON data.
 
 Docker
