@@ -87,7 +87,7 @@ public class CompilerServiceImp implements CompilerService {
 
 	private void runDocker() {
 		String docker = String.format(
-				"sudo %sDockerTimeout.sh %ss -u mysql -e \'NODE_PATH=/usr/local/lib/node_modules\' -i -t -v  \"%s%s%s\":/usercode %s /usercode/script.sh %s %s",
+				"%sDockerTimeout.sh %ss -u mysql -e \'NODE_PATH=/usr/local/lib/node_modules\' -i -t -v  \"%s%s%s\":/usercode %s /usercode/script.sh %s %s",
 				path, timeoutSecond, path, folder, randomName, virtualMachine, lang.getCompilerName(),
 				lang.getFileName());
 		commandExecutionService.executeCommand(docker);

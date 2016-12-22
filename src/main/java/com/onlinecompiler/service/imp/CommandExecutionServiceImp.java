@@ -14,6 +14,7 @@ import com.onlinecompiler.service.CommandExecutionService;
 public class CommandExecutionServiceImp implements CommandExecutionService{
 
 	public void executeCommand(String command) {
+		System.out.println(command);
 		Runtime runtime = Runtime.getRuntime();
         ProcessBuilder pb = new ProcessBuilder("/bin/bash", "-c", command);
 		try {
